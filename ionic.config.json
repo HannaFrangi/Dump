@@ -1,5 +1,7 @@
 {
-  "name": "Log",
-  "integrations": {},
+  "name": "MJ",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react-vite"
 }
