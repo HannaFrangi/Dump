@@ -1,7 +1,12 @@
 {
   "name": "MJ",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "privacyScreen" : {
+        "enable": true,
+        "imageName": "Splashscreen"
+      }
+    }
   },
   "type": "react-vite"
 }
