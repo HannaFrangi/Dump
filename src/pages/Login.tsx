@@ -60,8 +60,8 @@ Preferences.remove({key : INTRO_KEY});
             <IonCard>
             <IonCardContent>
                 <form onSubmit={doLOgin}>
-                    <IonInput fill='outline' labelPlacement='floating' label='Email' type='email' placeholder='HannaFrangi.hf@gmail.com'></IonInput>
-               <IonInput className='ion-margin-top' fill='outline' label='Password' labelPlacement='floating' type='password' ></IonInput>
+                    <IonInput mode='md' fill='outline' labelPlacement='floating' label='Email' type='email' placeholder='HannaFrangi.hf@gmail.com'></IonInput>
+               <IonInput  mode='md' className='ion-margin-top' fill='outline' label='Password' labelPlacement='floating' type='password' ></IonInput>
               <IonButton type='submit' color='danger' expand='block' className='ion-margin-top'> Login <IonIcon icon={logInOutline} slot="end"/> </IonButton>
             <IonButton routerLink='/register' color = 'tertiary' expand='block' className='ion-margin-top'> Create Account <IonIcon icon={personCircleOutline} slot='end'/></IonButton>
             <IonButton onClick={seeIntroAgain} size='small'  type= 'button' color='warning' expand='block' className='ion-margin-top'> Watch Intro Again <IonIcon icon={logInOutline} slot="end"/> </IonButton>

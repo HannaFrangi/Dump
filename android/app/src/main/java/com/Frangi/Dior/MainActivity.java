@@ -1,4 +1,4 @@
-package com.Frangi.Dior.log;
+package com.Frangi.Dior;
 
 import com.getcapacitor.BridgeActivity;
 

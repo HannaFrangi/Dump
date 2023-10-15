@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Dior</string>
     <string name="title_activity_main">Dior</string>
-    <string name="package_name">com.Frangi.Dior.log</string>
-    <string name="custom_url_scheme">com.Frangi.Dior.log</string>
+    <string name="package_name">com.Frangi.Dior</string>
+    <string name="custom_url_scheme">com.Frangi.Dior</string>
 </resources>
