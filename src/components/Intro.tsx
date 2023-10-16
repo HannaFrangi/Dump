@@ -20,10 +20,10 @@ return <IonButton onClick={() => swiper.slideNext()}>{Children}</IonButton>;
 const Intro: React.FC<ContainerProps> = ({onfinish}) => {
     return (
 <Swiper>
-    <SwiperSlide> <img src={I1} alt='I1.png'/> <IonText>  <h3>Hello </h3></IonText> <Swipperbuttonnext>FEIN</Swipperbuttonnext></SwiperSlide>
-    <SwiperSlide> <img src={I2} alt='I2.png'/> <IonText>  <h3>Trance </h3></IonText> <Swipperbuttonnext>newwww</Swipperbuttonnext></SwiperSlide>
-    <SwiperSlide> <img src={I3} alt='I3.png'/> <IonText>  <h3>Metroooooo </h3></IonText> <Swipperbuttonnext>Trance</Swipperbuttonnext></SwiperSlide>
-    <SwiperSlide> <img src={I4} alt='I4.png'/> <IonText>  <h3>Spiderrrrrrr </h3></IonText> <IonButton onClick={() => onfinish()}>Finish</IonButton></SwiperSlide>
+    <SwiperSlide> <img src={I1} alt='I1.png'/> <IonText>  Hello </IonText> <Swipperbuttonnext>FEIN</Swipperbuttonnext></SwiperSlide>
+    <SwiperSlide> <img src={I2} alt='I2.png'/> <IonText>  Trance </IonText> <Swipperbuttonnext>newwww</Swipperbuttonnext></SwiperSlide>
+    <SwiperSlide> <img src={I3} alt='I3.png'/> <IonText>  Metroooooo </IonText> <Swipperbuttonnext>Trance</Swipperbuttonnext></SwiperSlide>
+    <SwiperSlide> <img src={I4} alt='I4.png'/> <IonText>  Spiderrrrrrr </IonText> <IonButton onClick={() => onfinish()}>Finish</IonButton></SwiperSlide>
 </Swiper>
     );
 };

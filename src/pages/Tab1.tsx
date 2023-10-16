@@ -1,7 +1,9 @@
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { camera, cameraOutline, cameraReverseOutline, iceCream } from 'ionicons/icons';
 import React, { useState } from 'react';
 
+  
 const tab1: React.FC = () => {
 
     const [image, Setimage] = useState<any>(null);
@@ -27,8 +29,9 @@ Setimage(img);
                     <IonTitle>Camera Example</IonTitle>
                 </IonToolbar>
             </IonHeader>
+           
             <IonContent className="ion-padding">
-                <IonButton expand="full" onClick={takeimage}> Take Picture</IonButton>
+                <IonButton expand="full" onClick={takeimage}> Take Picture <IonIcon icon={cameraOutline}/></IonButton>
                 <img src={image}/>
             </IonContent>
         </IonPage>

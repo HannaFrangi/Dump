@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "398327940840",
+    "firebase_url": "https://test-da190-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "test-da190",
+    "storage_bucket": "test-da190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398327940840:android:ad252a127d99cd83cb6b5d",
+        "android_client_info": {
+          "package_name": "com.Frangi.Dior"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398327940840-a6mvgk0gepj1h1bttfud9uaifcrs782b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0z8acm-8JEE-BBJLgGRi_a8ROWEwdDMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398327940840-864iiv3qusl90ufp1ve90h1invmjt9he.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398327940840:android:2e64a4406e3608c2cb6b5d",
+        "android_client_info": {
+          "package_name": "com.dior.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398327940840-a6mvgk0gepj1h1bttfud9uaifcrs782b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0z8acm-8JEE-BBJLgGRi_a8ROWEwdDMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398327940840-864iiv3qusl90ufp1ve90h1invmjt9he.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

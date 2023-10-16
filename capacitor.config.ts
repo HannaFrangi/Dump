@@ -12,6 +12,9 @@ const config: CapacitorConfig = {
       enable: true,
       imageName: "Splashscreen",
   },
+  PushNotifications: {
+    presentationOptions: ["badge", "sound", "alert"],
+  },
 },
 }
 

@@ -1,99 +1,63 @@
-import { IonButton, IonCard, IonCardContent, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
-import React, { useEffect, useState } from 'react';
-import {iceCream, logInOutline, personCircleOutline } from 'ionicons/icons' ; 
-import SH2 from "../assets/SH2.png"; 
-import Intro from '../components/Intro';
-import { Preferences } from '@capacitor/preferences';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import V1 from '../Assets/Video/V1.webm';
+import A1 from '../Assets/sounds/audio.mp3'
+import A2 from '../Assets/sounds/fire.mp3'
+import A3 from'../Assets/sounds/water.mp3'
+import sum from '../Assets/sum.jpg'
+import { logoSoundcloud } from 'ionicons/icons';
 import particlesOptions from "../Assets/particles.json";
 import { loadSlim } from "tsparticles-slim"; 
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 
-const INTRO_KEY = 'intro-seen';
-const Login: React.FC = () => {
-    const router = useIonRouter(); 
-const [introSeen , SetIntroSeen] = useState(false);
-const [present , dismiss] = useIonLoading();
+const Test: React.FC = () => {
 
-useEffect(() => {
-const CheckStorage =async () => {
-    const seen = await Preferences.get({key: INTRO_KEY});
-    console.log("file : login.tsx:17 CHeck Storage" , seen );
-    SetIntroSeen(seen.value === 'true');
-}
-CheckStorage();
-} , [] )
+    const particlesInit = useCallback(async (engine: Engine) => {
+        console.log(engine);
 
-const doLOgin = async (event: any) => {
-event.preventDefault(); 
- await present('Logging in');
- setTimeout( async () => {
-    dismiss();
-    router.push('/app', 'root');
- } , 2000)
-console.log('doLOgin');
+        // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        //await loadFull(engine);
+        await loadSlim(engine);
+    }, []);
 
-}; 
-const FinishIntro = async() => {
-    console.log('Finish');
-    SetIntroSeen(true);
-    Preferences.set({key: INTRO_KEY, value: 'true'});
-}
+    const particlesLoaded = useCallback(async (container: Container | undefined) => {
+        await console.log(container);
+    }, []);
 
-const seeIntroAgain= () => {
-SetIntroSeen(false);
-Preferences.remove({key : INTRO_KEY}); 
-}
-
-const test = () => {
-    router.push('/Test');
-}
-const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    //await loadFull(engine);
-    await loadSlim(engine);
-}, []);
-
-const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
-}, []);
-
+  
     return (
-        <>
-        {!introSeen ? (
-        <Intro onfinish={FinishIntro}/> 
-        ) :(
-        <IonPage>
-           
-            <IonHeader>
-                <IonToolbar color = 'danger'>
-                    <IonTitle>Sum2Prove</IonTitle>
+        
+        <IonPage >
+            <IonHeader >
+                <IonToolbar color='danger'>
+                <IonButtons slot='start'> <IonBackButton defaultHref='/'/></IonButtons>
+                    <IonTitle>Audio <IonIcon icon={logoSoundcloud}/></IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent scrollY={false}>
-                
-            <div className='ion-text-center ion-padding' >
-            <img src={SH2} alt='SH Logo' width={'70%'} />
-            
-            </div>
-            <IonCard>
-            <IonCardContent>
-                <form onSubmit={doLOgin}>
-                    
-                    <IonInput mode='md' fill='outline' labelPlacement='floating' label='Email' type='email' placeholder='HannaFrangi.hf@gmail.com'></IonInput>
-               <IonInput  mode='md' className='ion-margin-top' fill='outline' label='Password' labelPlacement='floating' type='password' ></IonInput>
-              <IonButton type='submit' color='danger' expand='block' className='ion-margin-top'> Login <IonIcon icon={logInOutline} slot="end"/> </IonButton>
-            <IonButton routerLink='/register' color = 'tertiary' expand='block' className='ion-margin-top'> Create Account <IonIcon icon={personCircleOutline} slot='end'/></IonButton>
-            <IonButton onClick={seeIntroAgain} size='small'  type= 'button' color='warning' expand='block' className='ion-margin-top'> Watch Intro Again <IonIcon icon={logInOutline} slot="end"/> </IonButton>
-            <IonButton  onClick={test} size='small'  type= 'button' color='dark' expand='block' className='ion-margin-top'>Test <IonIcon icon={iceCream} slot="end"/> </IonButton>
-                </form> 
-            </IonCardContent>
-           {/*  <Particles
+            <IonContent className="ion-padding ion center">
+            <video loop autoPlay width="100%">
+          <source src={V1} type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+        <div className='ion-padding ion-center'>
+        <audio controls>
+          <source src={A1} type="audio/mp3"  />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio controls>
+          <source src={A2} type="audio/mp3"  />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio controls>
+          <source src={A3} type="audio/mp3"  />
+          Your browser does not support the audio tag.
+        </audio>
+        </div>
+           <Particles
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}
@@ -741,15 +705,11 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
                   }
                 }
               }}
-        /> */}
-           </IonCard>
-           
+        />
             </IonContent>
-
+          
         </IonPage>
-    ) }
-        </>
     );
 };
 
-export default Login;
+export default Test;
