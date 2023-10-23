@@ -3,5 +3,6 @@
 - firebase Push notification
 - capacitor camera
 - capacitor applaunch
+- capacitor privacy-Screen
 - ParticlesJs
-10/12/2023
+- FakerJS
