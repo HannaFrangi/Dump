@@ -9,6 +9,8 @@ import { loadSlim } from "tsparticles-slim";
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
+import { Network } from '@capacitor/network';
+
 
 const INTRO_KEY = 'intro-seen';
 const Login: React.FC = () => {
@@ -24,6 +26,7 @@ const CheckStorage =async () => {
 }
 CheckStorage();
 } , [] )
+
 
 const doLOgin = async (event: any) => {
 event.preventDefault(); 
@@ -63,6 +66,14 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
     await console.log(container);
 }, []);
 
+const logCurrentNetworkStatus = async () => {
+  const status = await Network.getStatus();
+  console.log('Network status:', status);
+}; 
+useEffect(() => {
+  // Call your function when the component is first mounted
+  logCurrentNetworkStatus();
+}, []);
     return (
         <>
         {!introSeen ? (
@@ -83,11 +94,10 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
             </div>
             <IonCard>
             <IonCardContent>
-                <form onSubmit={doLOgin}>
-                    
+                <form onSubmit={doLOgin}> 
                     <IonInput mode='md' fill='outline' labelPlacement='floating' label='Email' type='email' placeholder='HannaFrangi.hf@gmail.com'></IonInput>
                <IonInput  mode='md' className='ion-margin-top' fill='outline' label='Password' labelPlacement='floating' type='password' ></IonInput>
-              <IonButton type='submit' color='danger' expand='block' className='ion-margin-top'> Login <IonIcon icon={logInOutline} slot="end"/> </IonButton>
+              <IonButton type='submit' color='danger' expand='block' className='ion-margin-top' onClick={logCurrentNetworkStatus}> Login <IonIcon icon={logInOutline} slot="end"/> </IonButton>
             <IonButton routerLink='/register' color = 'tertiary' expand='block' className='ion-margin-top'> Create Account <IonIcon icon={personCircleOutline} slot='end'/></IonButton>
             <IonButton onClick={seeIntroAgain} size='small'  type= 'button' color='warning' expand='block' className='ion-margin-top'> Watch Intro Again <IonIcon icon={logInOutline} slot="end"/> </IonButton>
             <IonButton  onClick={test} size='small'  type= 'button' color='dark' expand='block' className='ion-margin-top'>Test <IonIcon icon={iceCream} slot="end"/> </IonButton>
