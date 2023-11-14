@@ -26,6 +26,8 @@ import Register from './pages/Register';
 import Menu from './pages/Menu';
 import Test from './pages/Test';
 
+
+
 setupIonicReact({
  //mode: "ios",
 }

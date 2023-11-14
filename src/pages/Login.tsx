@@ -1,14 +1,14 @@
 import { IonButton, IonCard, IonCardContent, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import {iceCream, logInOutline, personCircleOutline } from 'ionicons/icons' ; 
+import {globeOutline, iceCream, logInOutline, personCircleOutline } from 'ionicons/icons' ; 
 import SH2 from "../assets/SH2.png"; 
 import Intro from '../components/Intro';
 import { Preferences } from '@capacitor/preferences';
-import particlesOptions from "../Assets/particles.json";
+//import particlesOptions from "../Assets/particles.json";
 import { loadSlim } from "tsparticles-slim"; 
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
-import Particles from "react-particles";
+ //import Particles from "react-particles";
 import { Network } from '@capacitor/network';
 
 
@@ -51,6 +51,9 @@ Preferences.remove({key : INTRO_KEY});
 
 const test = () => {
     router.push('/Test');
+}
+const map = () => {
+  router.push('/map');
 }
 const particlesInit = useCallback(async (engine: Engine) => {
     console.log(engine);
