@@ -1,12 +1,12 @@
 import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonImg, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
-import V1 from '../Assets/Video/V1.webm';
-import A1 from '../Assets/sounds/audio.mp3'
-import A2 from '../Assets/sounds/fire.mp3'
-import A3 from'../Assets/sounds/water.mp3'
-import sum from '../Assets/sum.jpg'
+import V1 from '../assets/video/V1.webm';
+import A1 from '../assets/sounds/audio.mp3'
+import A2 from '../assets/sounds/fire.mp3'
+import A3 from'../assets/sounds/water.mp3'
+import sum from '../assets/sum.jpg'
 import { logoSoundcloud } from 'ionicons/icons';
-import particlesOptions from "../Assets/particles.json";
+import particlesOptions from "../assets/particles.json";
 import { loadSlim } from "tsparticles-slim"; 
 import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";

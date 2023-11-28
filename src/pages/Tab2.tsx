@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
 import { AppLauncher } from '@capacitor/app-launcher';
-import P2 from '../Assets/P2.jpg';
+import P2 from '../assets/P2.jpg';
 import { logoInstagram, logoWhatsapp } from 'ionicons/icons';
 import { faker } from '@faker-js/faker';
 
