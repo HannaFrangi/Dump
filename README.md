@@ -6,3 +6,4 @@
 - capacitor privacy-Screen
 - ParticlesJs
 - FakerJS
+- React-Qr-Code
