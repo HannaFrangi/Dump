@@ -1,6 +1,6 @@
 import { IonButton, IonCard, IonCardContent, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
 import React, { useEffect, useState } from 'react';
-import {globeOutline, iceCream, logInOutline, personCircleOutline } from 'ionicons/icons' ; 
+import {globeOutline, iceCream, logInOutline, personCircleOutline, qrCode, qrCodeOutline } from 'ionicons/icons' ; 
 import SH2 from "../assets/SH2.png"; 
 import Intro from '../components/Intro';
 import { Preferences } from '@capacitor/preferences';
@@ -104,6 +104,7 @@ useEffect(() => {
             <IonButton routerLink='/register' color = 'tertiary' expand='block' className='ion-margin-top'> Create Account <IonIcon icon={personCircleOutline} slot='end'/></IonButton>
             <IonButton onClick={seeIntroAgain} size='small'  type= 'button' color='warning' expand='block' className='ion-margin-top'> Watch Intro Again <IonIcon icon={logInOutline} slot="end"/> </IonButton>
             <IonButton  onClick={test} size='small'  type= 'button' color='dark' expand='block' className='ion-margin-top'>Test <IonIcon icon={iceCream} slot="end"/> </IonButton>
+              <IonButton routerLink='/Qrcode' color='danger' type='button'  expand='block'  className='ion-margin-top'>Qr Code <IonIcon icon={qrCodeOutline} slot='end'/></IonButton>
                 </form> 
             </IonCardContent>
            {/*  <Particles

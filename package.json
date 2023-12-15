@@ -37,6 +37,7 @@
     "react-dom": "^18.2.0",
     "react-native-maps": "^1.8.0",
     "react-particles": "^2.12.2",
+    "react-qr-code": "^2.0.12",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
     "swiper": "^10.3.1",
