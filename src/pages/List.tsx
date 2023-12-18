@@ -19,7 +19,7 @@ useEffect(() => {
     setPresentingElement(page.current);
 }, []);
 
-    useIonViewWillEnter( async () => {
+    useIonViewWillEnter(async () => {
  const users = await getUsers();
  Setusers(users);
 setLoading(false);
@@ -63,7 +63,6 @@ const doRefresh =  async (event: any) => {
     return (
         <IonPage ref={page}>
             <IonHeader>
-            
                 <IonToolbar color='success'>
                 <IonButtons  slot="start"><IonMenuButton/></IonButtons>
                     <IonTitle>List</IonTitle>
@@ -95,7 +94,6 @@ const doRefresh =  async (event: any) => {
         </IonChip>
     </IonItem>
 </IonCardContent>
-
         </IonCard>
     ))
 )}

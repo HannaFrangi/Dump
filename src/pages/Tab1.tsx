@@ -3,36 +3,35 @@ import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, I
 import { camera, cameraOutline, cameraReverseOutline, iceCream } from 'ionicons/icons';
 import React, { useState } from 'react';
 
-  
+
 const tab1: React.FC = () => {
 
     const [image, Setimage] = useState<any>(null);
-const takeimage =async () => {
-    const image = await Camera.getPhoto({
-quality: 100,
-allowEditing:false,
-resultType: CameraResultType.Base64,
-saveToGallery:true,  
-source:CameraSource.Camera,
-})
-const img = `data:image/jpeg;base64,${image.base64String}`; 
-Setimage(img);
-};
+    const takeimage = async () => {
+        const image = await Camera.getPhoto({
+            quality: 100,
+            allowEditing: false,
+            resultType: CameraResultType.Base64,
+            saveToGallery: true,
+            source: CameraSource.Camera,
+        })
+        const img = `data:image/jpeg;base64,${image.base64String}`;
+        Setimage(img);
+    };
 
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar color={'success'}>
                     <IonButtons slot='start' >
-<IonMenuButton/>
+                        <IonMenuButton />
                     </IonButtons>
                     <IonTitle>Camera Example</IonTitle>
                 </IonToolbar>
             </IonHeader>
-           
             <IonContent className="ion-padding">
-                <IonButton expand="full" onClick={takeimage}> Take Picture <IonIcon icon={cameraOutline}/></IonButton>
-                <img src={image}/>
+                <IonButton expand="full" onClick={takeimage}> Take Picture <IonIcon icon={cameraOutline} /></IonButton>
+                <img src={image} />
             </IonContent>
         </IonPage>
     );

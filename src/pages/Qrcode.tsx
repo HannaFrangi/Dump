@@ -3,13 +3,30 @@ import { qrCodeOutline } from 'ionicons/icons';
 import React from 'react';
 import { useState } from 'react';
 import QRCode from 'react-qr-code'; 
+import ParticleBackground from 'react-particle-backgrounds'
 
 const Qrcode: React.FC = () => {
     const [value, setValue] = useState();
     const [back, setBack] = useState('#FFFFFF');
     const [fore, setFore] = useState('#000000');
     const [size, setSize] = useState(256);
-
+    const settings = {
+        particle: {
+          particleCount: 35,
+          color: "#fff",
+          minSize: 1,
+          maxSize: 4
+        },
+        velocity: {
+          minSpeed: 0.2,
+          maxSpeed: 0.4
+        },
+        opacity: {
+          minOpacity: 0,
+          maxOpacity: 0.6,
+          opacityTransitionTime: 10000
+        }
+      }
     return (
         <IonPage>
             <IonHeader>
@@ -18,7 +35,7 @@ const Qrcode: React.FC = () => {
                     <IonTitle>Qr Code <IonIcon icon={qrCodeOutline}/></IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent className="ion-padding">
+            <IonContent className="ion-padding" scrollY={false}>
             <div className="App">
             <center>
                 <br />
@@ -64,6 +81,7 @@ const Qrcode: React.FC = () => {
                 )}
             </center>
         </div>
+        <ParticleBackground settings={settings}/>
             </IonContent>
         </IonPage>
     );

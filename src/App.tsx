@@ -26,6 +26,7 @@ import Register from './pages/Register';
 import Menu from './pages/Menu';
 import Test from './pages/Test';
 import Qrcode from './pages/Qrcode';
+import Weather from './pages/Weather';
 
 
 
@@ -83,6 +84,7 @@ const App: React.FC = () => (
 <Route component={Menu} path="/app" />
 <Route component={Test} path="/test" />
 <Route component={Qrcode} path="/Qrcode" />
+<Route component={Weather} path="/Weather"/>
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
