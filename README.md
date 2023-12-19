@@ -7,3 +7,4 @@
 - ParticlesJs
 - FakerJS
 - React-Qr-Code
+- Weather API
