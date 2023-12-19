@@ -5,9 +5,7 @@ import SH2 from "../assets/SH2.png";
 import Intro from '../components/Intro';
 import { Preferences } from '@capacitor/preferences';
 //import particlesOptions from "../Assets/particles.json";
-import { loadSlim } from "tsparticles-slim"; 
 import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
  //import Particles from "react-particles";
 import { Network } from '@capacitor/network';
 import ParticleBackground from 'react-particle-backgrounds'
@@ -56,20 +54,6 @@ const test = () => {
 const map = () => {
   router.push('/map');
 }
-const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    //await loadFull(engine);
-    await loadSlim(engine);
-}, []);
-
-const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
-}, []);
-
 const logCurrentNetworkStatus = async () => {
   const status = await Network.getStatus();
   console.log('Network status:', status);
