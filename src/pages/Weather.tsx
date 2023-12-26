@@ -1,4 +1,4 @@
-import { IonAvatar, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonLabel, IonPage, IonText, IonTitle, IonToolbar, useIonViewWillEnter } from '@ionic/react';
+import { IonAvatar, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonLabel, IonPage, IonText, IonTitle, IonToast, IonToolbar, useIonViewWillEnter } from '@ionic/react';
 import { cloudCircleOutline, qrCodeOutline } from 'ionicons/icons';
 import React, { useState } from 'react';
 import './weather.css';
@@ -7,6 +7,7 @@ import ParticleBackground from 'react-particle-backgrounds'
 const Weather: React.FC = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
+  const[error , SetError] = useState(null);
 
   const apiKey = '070dca3953a54accb95212004231612';
   const apiUrl = 'https://api.weatherapi.com/v1/current.json'; // Replace with the actual API endpoint
@@ -16,6 +17,7 @@ const Weather: React.FC = () => {
       const response = await fetch(`${apiUrl}?&key=${apiKey}&q=${city}`);
       console.log(response);
       if (!response.ok) {
+        console.log("hi");
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
@@ -23,10 +25,11 @@ const Weather: React.FC = () => {
       setWeatherData(data);
     } catch (error) {
       console.error('Error fetching weather data:', error);
-      // Handle error
+      setWeatherData(null);
+      SetError('Failed to get Data')
     }
   };
-
+  // Partcile Settings = >
   const settings = {
     particle: {
       particleCount: 100,
@@ -49,7 +52,6 @@ const Weather: React.FC = () => {
 
   return (
     <IonPage>
-
       <IonHeader>
         <IonToolbar class='insane-toolbar'>
           <IonButtons slot='start'> <IonBackButton defaultHref='/' /></IonButtons>
@@ -75,9 +77,9 @@ const Weather: React.FC = () => {
           </IonCard>
           </div>
         )}
+          <IonToast isOpen={!!error} message={error} duration={5000} color='danger'></IonToast>
         <ParticleBackground settings={settings} />
       </IonContent>
-
     </IonPage>
   );
 };

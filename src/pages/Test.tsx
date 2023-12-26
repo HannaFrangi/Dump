@@ -61,7 +61,6 @@ const Test: React.FC = () => {
         </div>
         <ParticleBackground settings={settings} />
             </IonContent>
-          
         </IonPage>
     );
 };
